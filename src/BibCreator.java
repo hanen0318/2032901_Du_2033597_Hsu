@@ -20,15 +20,15 @@ public class BibCreator {
 
 	static int invalid = 0, valid = 0;//how many valid or invalid files
 	
-	public static String readFile(Scanner sc)
+	public static String readFile(Scanner scanner)
 	{
-		String s = "";
-		while (sc.hasNextLine()) //While the file still has a next line and is not at END OF FILE
+		String n = "";
+		while (scanner.hasNextLine()) 
 		{
-			s += sc.nextLine(); //add to the String
+			n += scanner.nextLine(); //adding to string
 		}
-		sc.close(); //Close Scanner
-		return s; //return the file
+		scanner.close(); //Close Scanner
+		return n; 
 	}
 	
 	public static void main(String[] args) {
