@@ -27,14 +27,51 @@ public class BibCreator {
 		{
 			n += scanner.nextLine(); //adding to string
 		}
-		scanner.close(); //Close Scanner
+		scanner.close();
 		return n; 
+	}
+	
+	public static void deleteFile(int i)//DELETING 
+	{
+		File deleteFile = null;
+		
+		deleteFile = new File("C:\\Java eclipse\\2032901_Du_2033597_Hsu\\src\\Files\\IEEE"+ i +".json");
+		deleteFile.delete();
+		deleteFile = new File("C:\\Java eclipse\\2032901_Du_2033597_Hsu\\src\\Files\\ACM" + i + ".json");
+		deleteFile.delete();
+		deleteFile = new File("C:\\Java eclipse\\2032901_Du_2033597_Hsu\\src\\Files\\NJ" + i + ".json");
+		deleteFile.delete();
+	}
+	
+	public static void processFilesForValidation(Scanner scanner, PrintWriter pw, int i) throws FileInvalidException, FileNotFoundException{
+		
+		String bib = readFile(scanner);
+		String ieee = "";
+		String acm = "";
+		String nj = "";
+		StringTokenizer seperateArticle = new StringTokenizer(bib, "@"); //breaking string into tokens to seperate the articles
+		
+		
+		//create IEEE file and write to new file from reading ieee string
+		pw = new PrintWriter(new FileOutputStream("IEEE"+ i +".json", false));
+		pw.println(ieee);
+		pw.close();
+		
+		//create ACM file file and write to new file from reading acm string
+		pw = new PrintWriter(new FileOutputStream("ACM"+ i +".json", false));
+		pw.println(acm);
+		pw.close();
+		
+		//create NJ file file and write to new file from reading nj string
+		pw = new PrintWriter(new FileOutputStream("NJ"+ i +".json", false));
+		pw.println(nj);
+		pw.close();
 	}
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-		System.out.println("******Welcome to Bib Creator!******");
+		System.out.println("Welcome to Bib Creator!");
 		
 		
 	}
