@@ -72,7 +72,7 @@ public class BibCreator {
 		pw.println(nj);
 		pw.close();
 		
-		valid++;// increment after 
+		valid++;// counter for succesful files.
 		
 	}
 	
