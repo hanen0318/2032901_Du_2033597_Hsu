@@ -1,6 +1,6 @@
 // -----------------------------------------------------
 // Final Project (BibCreator)
-// ©2022 Darryl Du, Hanen Hsu
+// Â©2022 Darryl Du, Hanen Hsu
 // Written by: Darryl Du 2032901, Hanen Hsu 2033597
 // -----------------------------------------------------
 import java.util.Scanner; //scanner
@@ -54,7 +54,11 @@ public class BibCreator {
 		
 		while(seperateArticle.hasMoreTokens())
 		{
-			
+			String article = seperateArticle.nextToken();
+			String title = "", journal = "", volume = "", number = "", pages = "", month = "", year = "", doi = "";
+//			Pattern patternFields = Pattern.compile("([a-zA-Z]*?)=\\{(.*?)\\}");
+//		   	 Matcher matcherFields = patternFields.matcher(article);
+//dont think should use Pattern but i cant find other solution
 			
 		}
 		
