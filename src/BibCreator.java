@@ -31,7 +31,7 @@ public class BibCreator {
 		return n; 
 	}
 	
-	public static void deleteFile(int i)//DELETING 
+	public static void deleteFile(int i)//FOR DELETING WHEN IT'S INVALID
 	{
 		File deleteFile = null;
 		
