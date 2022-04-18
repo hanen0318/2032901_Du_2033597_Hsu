@@ -45,12 +45,17 @@ public class BibCreator {
 	
 	public static void processFilesForValidation(Scanner scanner, PrintWriter pw, int i) throws FileInvalidException, FileNotFoundException{
 		
-		String bib = readFile(scanner);
+		String bib = readFile(scanner); //Using function to read file and put into one big string
 		String ieee = "";
 		String acm = "";
 		String nj = "";
-		StringTokenizer seperateArticle = new StringTokenizer(bib, "@"); //breaking string into tokens to seperate the articles
+		StringTokenizer seperateArticle = new StringTokenizer(bib, "@"); //breaking string into tokens to seperate the articles when it starts with @
 		
+		while(seperateArticle.hasMoreTokens())
+		{
+			
+			
+		}
 		
 		//create IEEE file and write to new file from reading ieee string
 		pw = new PrintWriter(new FileOutputStream("IEEE"+ i +".json", false));
@@ -66,6 +71,9 @@ public class BibCreator {
 		pw = new PrintWriter(new FileOutputStream("NJ"+ i +".json", false));
 		pw.println(nj);
 		pw.close();
+		
+		valid++;// increment after 
+		
 	}
 	
 	public static void main(String[] args) {
@@ -73,7 +81,7 @@ public class BibCreator {
 
 		System.out.println("Welcome to Bib Creator!");
 		
-		
+		System.out.println("A total of " + invalid + " files were invalid, and could not be processed. All other " + valid + " files have been created.\n");
 	}
 
 }
